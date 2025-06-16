@@ -1,0 +1,421 @@
+/*
+Evan Torres
+
+
+COLOR PALETTE
+--white
+--rich-black: #04192Aff;
+--thistle: #D3B9D9ff;
+
+--oxford-blue: #101F31ff;
+--palatinate-blue: #492CD2ff;
+--space-cadet: #2E3042ff;
+
+
+*/
+
+body
+{
+    margin: 0;
+}
+
+.homepagecontent
+{  
+    width: 80%;
+    margin: auto;
+}
+
+.homepagecontent u
+{
+    color: #D3B9D9ff;
+}
+
+.homelist
+{
+    display: inline-block;
+    list-style-type: disc;
+    text-align: justify;
+    font-size: 25px;
+    max-width: 415px;
+    text-wrap: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.homelist p
+{
+    font-size: 15px;
+    text-align: justify;
+    padding-left: 25px;
+    width: 75%;
+}
+
+.homeheading3, .aboutmeHeading3, .contenHeading3
+{
+    text-transform: uppercase;
+    font-size: 60px;
+    margin: auto;
+    color: white;
+    text-shadow: 3px 3px black;
+}
+
+.StudioGalleryTitle
+{
+    text-transform: uppercase;
+    font-size: 60px;
+    margin: auto;
+    color: white;
+    background-color: #04192Aff;
+    text-shadow: 3px 3px #D3B9D9ff;
+}
+
+#Gallery {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    padding: 20px;
+    
+}
+
+#Gallery figure {
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+    background: black;
+    border: 2px solid #444;
+    margin: auto;
+
+}
+
+#Gallery figure img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#Gallery ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+
+#Gallery ul li {
+    position: relative;
+}
+
+#Gallery ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-size: 12px;
+}
+
+#Gallery ul li img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#Gallery ul li img:hover {
+    opacity: 0.7;
+}
+
+#Gallery ul li a span {
+    display: none;
+}
+
+#Gallery ul li a:hover span {
+    display: block;
+    position: absolute;
+    left: 150px;
+    top: 0;
+    z-index: 10;
+}
+
+#Gallery ul li a:hover span img {
+    width: 400px;
+    border: 2px solid #fff;
+}
+
+#Gallery ul li img:hover {
+    opacity: 0.7;
+}
+
+.thumbnails, .mainImage
+{
+    display: inline-block;
+}
+
+.thumbnail:hover 
+{
+    transform: scale(1.1);
+}
+
+
+.mainImage img {
+    width: 400px;
+    height: auto;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnails img:hover ~ .largeImage
+{
+    content: attr(data-full);
+    opacity: 1;
+}
+
+.mainImage img 
+{
+    transition: opacity 0.3s ease-in-out;
+}
+
+.aboutmeHeading3
+{
+    background-color: #D3B9D9ff;
+    color: #04192Aff;
+}
+
+.overlay
+{
+    background-image: url(Studio_1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: blur(8px);
+    --webkit-filter: blur(8px);
+    z-index: -1;
+}
+
+
+.aboutmePic
+{
+    height: 400px;
+    padding-top: 20px;
+}
+
+.aboutmeParagraph
+{
+    overflow: auto;
+    margin-left:0;
+    font-size: 20px;
+}
+
+.aboutmeContent, .contactContent, .servicesContent, .portfolioContent, .blogsContent, .productsContent
+{
+    background-color: white;
+    width:58%;
+    align-self: center;
+    display: inline-block;
+}
+
+.aboutmeContent h4
+{
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #D3B9D9ff;
+}
+
+.oneHalf
+{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.contactContent
+{
+    padding-top: 20px; 
+    padding-bottom: 170px;
+      
+}
+
+
+.contactContent h3, .servicesHeading3, .portfolioHeading3, .blogsHeading3, .productsHeading3
+{
+    font-size: 55px;
+    
+}
+
+.contactContent p, .servicesContent p, .servicesContent ul, .portfolioContent p, .productsContent p, .blogsContent p
+{
+    font-size: 20px;
+    
+}
+
+.contactForm
+{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactForm input[type=text]
+{
+    font-family: Dosis, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    display: inline-block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    align-content: center;
+}
+
+.contactForm input[type=submit]
+{
+    font-family: Dosis, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 50%;
+    align-content: center;
+    background-color: #D3B9D9ff;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border: 3px solid #04192Aff;
+    border-radius: 5px;
+}
+
+.contactForm input[type=submit]:hover
+{
+    background-color: rgb(204, 142, 218);
+}
+
+#contactMessage
+{ 
+    width: 444px;
+    height: 142px;
+    margin-bottom: 20px;
+}
+
+.servicesTable
+{
+    padding-inline-start: 0;
+    padding-bottom: 120px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+
+.servicesTable tr:nth-of-type(odd)
+{
+    background-color: #D3B9D9ff;
+}
+
+.servicesTable th
+{
+    font-size: 50px;
+    text-align: left;
+    padding: 10px;
+    vertical-align: middle;
+    border: 2px solid #04192Aff ;
+   
+}
+.servicesTable  td
+{
+    text-align: left;
+    vertical-align: middle;
+    padding-left: 10px;
+    border: 2px solid #04192Aff ;
+}
+
+.portfolioGrid, .productsGrid
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto); /* 3 rows */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portfolioGridItem img, .productsGridItem img
+{
+    width: 100%;
+    display: block;
+    border: none;
+}
+
+.portfolioGridItem p, .productsGridItem img
+{
+    margin-top: 8px;
+    font-size: 1em;
+    color: #333;
+}
+
+audio
+{
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.blogsGrid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 column */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+
+
+}
+
+.blogsGridItem img {
+    height: 350px;
+    display: block;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blogsGridItem p {
+    margin-top: 8px;
+    font-size: 1em;
+    color: #333;
+    cursor: pointer;
+}
+
+.productsGridItem button
+{
+    font-family: Dosis, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #D3B9D9ff;
+    cursor: pointer;
+    border: 3px solid #04192Aff;
+    border-radius: 5px;
+}
+
+.productsGridItem button:hover
+{
+
+    background-color: rgb(204, 142, 218);
+    cursor: pointer;
+}
+
+
+footer
+{
+    background-color: #D3B9D9ff;
+    font-style: italic;
+    padding: 1em;
+    border-top: 2px solid #04192Aff;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Extraterrestrial Audio's delay and reverb calculator for musicians and producers." />
+  <meta name="keywords" content="metronome, web metronome, online metronome, music production, musicians, tempo, beat" />
+  <meta name="author" content="Evan Torres" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Delay and Reverb Time Calculator</title>
+  <link rel="stylesheet" type="text/css" href="css/header.css" />
+  <link rel="stylesheet" href="css/etsynth.css" />
+  <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="4327Z7EV3U3TG"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script>
+  <script src="js/etsynth.js" defer></script>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="wrapper">
+    <header>
+      <a href="index.html">
+        <img src="images/ETAudioLogo.png" width="100px" alt="The Official logo of Extraterrestrial Audio." />
+        <h1>Extraterrestrial Audio</h1>
+      </a>
+    </header>
+
+    <div class="menubar">
+      <nav class="navbar">
+        <div class="navbar-inner">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="metronome.html">Metronome</a></li>
+            <li><a href="delayreverbcalc.html">Delay &amp; Reverb Calculator</a></li>
+            <li><a href="etsynth.html">ET-Synth</a></li>
+          </ul>
+          <div id="paypalCartButton">
+            <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+            <script>
+              cartPaypal.Cart({ id: "pp-view-cart" });
+            </script>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="pagewrapper">
+    <div class="container">
+      <h1>ET-Synth</h1>
+
+      <!-- Oscillator 1 Controls -->
+      <fieldset class="synth-section">
+        <legend>Oscillator 1</legend>
+
+        <label>Waveform:
+          <select id="osc1-waveform">
+            <option value="sine" selected>Sine</option>
+            <option value="square">Square</option>
+            <option value="sawtooth">Sawtooth</option>
+            <option value="triangle">Triangle</option>
+          </select>
+        </label>
+
+        <label class="slider-label">Volume:
+          <input type="range" id="osc1-volume" min="0" max="1" step="0.01" value="0.5" />
+          <span class="slider-value" id="osc1-volume-val">0.5</span>
+        </label>
+
+        <label>Filter Type:
+          <select id="osc1-filter-type">
+            <option value="lowpass">Lowpass</option>
+            <option value="highpass">Highpass</option>
+            <option value="bandpass">Bandpass</option>
+            <option value="lowshelf">Lowshelf</option>
+            <option value="highshelf">Highshelf</option>
+            <option value="peaking">Peaking</option>
+            <option value="notch">Notch</option>
+            <option value="allpass">Allpass</option>
+          </select>
+        </label>
+
+        <label class="slider-label">Filter Cutoff:
+          <input type="range" id="osc1-filter" min="0" max="100" step="0.1" value="100" />
+          <span class="slider-value" id="osc1-filter-val">100</span>
+        </label>
+
+        <label class="slider-label">Q:
+          <input type="range" id="osc1-filter-q" min="0.0001" max="30" step="0.01" value="1" />
+          <span class="slider-value" id="osc1-filter-q-val">1</span>
+        </label>
+
+        <label class="slider-label">Gain:
+          <input type="range" id="osc1-filter-gain" min="-40" max="40" step="0.1" value="0" />
+          <span class="slider-value" id="osc1-filter-gain-val">0</span>
+        </label>
+
+        <label class="slider-label">Filter Slope:
+          <input type="range" id="osc1-filter-slope" min="1" max="5" step="1" value="2" />
+          <span class="slider-value" id="osc1-filter-slope-val">2</span>
+        </label>
+
+        <fieldset>
+          <legend>ADSR</legend>
+
+          <label class="slider-label">A:
+            <input type="range" id="osc1-attack" min="0" max="5" step="0.01" value="0.1" />
+            <span class="slider-value" id="osc1-attack-val">0.1</span>
+          </label>
+
+          <label class="slider-label">D:
+            <input type="range" id="osc1-decay" min="0" max="5" step="0.01" value="0.1" />
+            <span class="slider-value" id="osc1-decay-val">0.1</span>
+          </label>
+
+          <label class="slider-label">S:
+            <input type="range" id="osc1-sustain" min="0" max="1" step="0.01" value="0.7" />
+            <span class="slider-value" id="osc1-sustain-val">0.7</span>
+          </label>
+
+          <label class="slider-label">R:
+            <input type="range" id="osc1-release" min="0" max="5" step="0.01" value="0.5" />
+            <span class="slider-value" id="osc1-release-val">0.5</span>
+          </label>
+        </fieldset>
+      </fieldset>
+      <div class="center">
+        <div id="keyboard" class="keyboard"></div>
+      </div>
+</body>
+</html>

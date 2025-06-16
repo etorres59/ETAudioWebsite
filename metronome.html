@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0" />
+    <meta name="description" content="Extraterrestrial Audio's Web Metronome is a customizable metronome for musicians and producers."
+    />
+    <meta name="keywords" content="metronome, web metronome, online metronome, music production, musicians, tempo, beat"
+    />
+    <meta name="author" content="Evan Torres" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Web Metronome</title>
+    <link rel="stylesheet" href="css/metronome.css" />
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+     <script src="https://www.paypalobjects.com/ncp/cart/cart.js" data-merchant-id="4327Z7EV3U3TG"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.js"></script>
+    <script src="js/metronome.js" defer></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <header>
+            <img a href="index.html" src="images/ETAudioLogo.png" width="100px" height="auto"
+                alt="The Official logo of Extraterrestrial Audio.">
+            <h1 a href="index.html">Extraterrestrial Audio</h1>
+        </header>
+
+        <div class="menubar">
+            <nav class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="metronome.html">Metronome</a></li>
+                        <li><a href="delayreverbcalc.html">Delay & Reverb Calculator</a></li>
+                        <li><a href="etsynth.html">ET-Synth</a></li>
+                    </ul>
+                    <div id="paypalCartButton">
+                        <paypal-cart-button data-id="pp-view-cart"></paypal-cart-button>
+                        <script>
+                            cartPaypal.Cart({ id: "pp-view-cart" });
+                        </script>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+    <div class="container">
+      <h1>ET's Metronome</h1>
+
+      <!-- Metronome Sound Dropdown Select -->
+      <!-- <label for="metronomeSound">Choose a Metronome sound:</label>
+        <select name="metronomeSound" id="metronomeSound" onchange="updateSound(this, event)">
+            <option value="tick">Tick</option>
+            <option selected value="click">Click</option>
+            <option value="cowbell">Cowbell</option>
+            <option value="hihat">Hi Hat</option>
+            <option value="beep">Beep</option>
+            <option value="rimshot">Rimshot</option>
+        </select> -->
+
+      <div class="mainBpmElements">
+        <div class="row bpmInput">
+          <!-- BPM input -->
+          <label for="bpm"> Input BPM:</label>
+          <input type="number" id="bpm" value="120" min="1" max="300" />
+        </div>
+
+        <div class="row bpmAdjustments">
+          <span>BPM Adjustments:</span>
+
+          <br />
+          <div class="adjustmentButtons">
+            <!-- BPM Adjustment Buttons -->
+            <button id="bpmadjustMinus10" onclick="changeBpm(-10)">-10</button>
+            <button id="bpmadjustMinus5" onclick="changeBpm(-5)">-5</button>
+            <button id="bpmadjustMinus1" onclick="changeBpm(-1)">-1</button>
+            <button id="bpmadjustAdd1" onclick="changeBpm(1)">+1</button>
+            <button id="bpmadjustAdd5" onclick="changeBpm(5)">+5</button>
+            <button id="bpmadjustAdd10" onclick="changeBpm(10)">+10</button>
+          </div>
+        </div>
+
+        <div class="row tapTempo">
+          <button id="tapButton">Tap Tempo</button>
+        </div>
+
+        <div class="row">
+          <div class="tapInstructions">Tap 8 Times</div>
+        </div>
+
+        <div class="row subdivisionSelector">
+          <!-- Sub-division Drop Down Select -->
+          <label for="subdivisionSelect">Subdivision:</label>
+          <select name="subdivisionSelect" id="subdivisionSelect">
+            <option selected value="1">1/4 Note</option>
+            <option value="3">1/4 Triplets</option>
+            <option value="2">1/8 Note</option>
+            <option value="6">1/8 Triplets</option>
+            <option value="4">1/16 Note</option>
+            <option value="12">1/16 Triplets</option>
+          </select>
+        </div>
+
+        <div class="row metronomeSoundAdjustments">
+          <label for="selectedSound">Sound:</label>
+          <select id="selectedSound">
+            <option selected value="0">Sine</option>
+            <option value="1">Square</option>
+            <option value="2">Sawtooth</option>
+            <option value="3">Triangle</option>
+          </select>
+        </div>
+
+        <div class="row metronomeSoundAdjustments">
+          <label for="selectedFrequency">Frequency:</label>
+          <select id="selectedFrequency">
+            <option value="0">High</option>
+            <option selected value="1">Mid</option>
+            <option value="2">Low</option>
+          </select>
+        </div>
+
+        <div class="row filterAdjustments">
+          <label for="filterType">Filter Type:</label>
+          <select id="filterType">
+            <option value="lowpass">Lowpass</option>
+            <option value="highpass">Highpass</option>
+            <option value="bandpass">Bandpass</option>
+            <option value="notch">Notch</option>
+          </select>
+          <br />
+
+          <label for="filterFreq">Filter Frequency:</label>
+          <input
+            id="filterFreq"
+            type="range"
+            min="20"
+            max="20000"
+            step="1"
+            value="20000"
+            oninput="updateFilterFreqReadout(this.value)"
+          />
+          <input
+            id="filterFreqReadout"
+            type="number"
+            min="20"
+            max="20000"
+            step="1"
+            value="20000"
+            onchange="updateFilterFreqSlider(this.value)"
+          />
+          Hz
+          <br />
+
+          <label for="filterQ">Filter Q:</label>
+          <input
+            id="filterQ"
+            type="range"
+            min="0.1"
+            max="10"
+            step="0.1"
+            value="1"
+            oninput="updateFilterQReadout(this.value)"
+          />
+          <input
+            id="filterQReadout"
+            type="number"
+            min="0.1"
+            max="10"
+            step="0.1"
+            value="1"
+            onchange="updateFilterQSlider(this.value)"
+          />
+        </div>
+
+        <!-- <div class="row spAn">
+            <canvas id="spectrumAnalyzer" width="400" height="150" style="border: 3px solid rgb(30, 172, 170);"></canvas>
+        </div> -->
+
+        <div class="row playbackButtons">
+          <!-- Start and Stop buttons -->
+          <button id="startButton">Start</button>
+          <button id="stopButton">Stop</button>
+        </div>
+
+        <div class="row volume">
+          <!-- Volume slider -->
+          <label for="volumeSlider">Volume</label>
+          <input type="range" id="volumeSlider" min="0" max="1" step=".01" />
+          <input type="text" id="volumeLevel" value=".75" />
+        </div>
+      </div>
+
+      <div class="row noteBox">
+        <span class="noteText"
+          ><u><b>NOTE</b>:</u
+          ><em>
+            Any changes made to the BPM or Subdivisions will require you restart
+            the metronome.</em
+          ></span
+        >
+      </div>
+      <br />
+
+      <!-- Audio element -->
+      <!-- <audio id="audio" controls>
+            <source id="soundSource" src="/static/sounds/click.mp3" type="audio/mp3"/>
+            Your browser does not support the audio element.
+        </audio> -->
+
+      <div class="row">
+        <div
+          id="beatIndicator"
+          style="
+            width: 50px;
+            height: 50px;
+            background-color: grey;
+            border-radius: 50%;
+          "
+        ></div>
+      </div>
+    </div>
+  </body>
+</html>
