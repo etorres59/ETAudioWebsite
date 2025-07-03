@@ -1,130 +1,159 @@
+/* Mobile-First Styles */
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(250, 228, 255);
-
+  margin: 0;
+  padding: 0;
+  background-color: rgb(250, 228, 255);
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 body .container {
-    font-family: Helvetica, sans-serif, Arial;
-    border: 5px solid rgba(211, 185, 217, 0.813);
-    background-color: rgb(250, 228, 255);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    margin: auto;
-    max-width: 700px;
+  border: 4px solid rgba(211, 185, 217, 0.813);
+  background-color: rgb(250, 228, 255);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  margin: 10px auto;
+  width: 95%;
+  max-width: 700px;
+  padding: 10px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 24px;
-    text-decoration: underline;
-    color:#04192Aff;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: underline;
+  color: #04192A;
+  margin-bottom: 10px;
 }
 
 .row {
-    margin-bottom: 10px;
-    text-align: center;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .adjustmentButtons {
-    margin-top: 5px;
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+#bpmadjustMinus10, 
+#bpmadjustAdd10,
+#bpmadjustAdd5,
+#bpmadjustMinus5,
+#bpmadjustMinus1,
+#bpmadjustAdd1,
+#startButton,
+#stopButton {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 5px;
 }
 
 #bpmadjustMinus10, 
 #bpmadjustAdd10 {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    background-color: rgba(213, 74, 255, 0.904);
-    border-radius: 5px
+  background-color: rgba(213, 74, 255, 0.904);
 }
 
 #bpmadjustAdd5,
 #bpmadjustMinus5 {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    background-color: rgba(223, 119, 255, 0.911);
-    border-radius: 5px
+  background-color: rgba(223, 119, 255, 0.911);
 }
 
-
-    
-#bpmadjustMinus1 ,
+#bpmadjustMinus1,
 #bpmadjustAdd1 {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    background-color: rgb(232, 175, 250);
-    border-radius: 5px
+  background-color: rgb(232, 175, 250);
 }
 
 #tapButton {
-    width: 75px;
-    height: 75px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: rgb(241, 197, 254);
-    border-radius: 5px
+  width: 75px;
+  height: 75px;
+  margin: 10px auto;
+  background-color: rgb(241, 197, 254);
+  border-radius: 5px;
+  display: block;
 }
 
 #startButton {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 5px;
-    text-align: center;
-    background-color: lightgreen;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px
+  background-color: lightgreen;
+  margin-right: 5px;
 }
 
 #stopButton {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    text-align: center;
-    background-color: red;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px
+  background-color: red;
+  margin-left: 5px;
 }
 
 #volumeLevel {
-    max-width: 25px;
+  max-width: 25px;
 }
 
 .noteBox {
-    background-color: rgba(239, 185, 255, 0.566);
-    height: 40px;
-    border: 3px solid black;
-    flex-wrap: wrap;
-    width: 300px;
-    /* Constrain the width */
-    margin: 0 auto;
-    /* Center horizontally */
-    display: flex;
-    /* Optional for centering content within the box */
-    justify-content: center;
-    /* Optional for centering content within the box */
-    align-items: center;
-    /* Optional for centering content within the box */
+  background-color: rgba(239, 185, 255, 0.566);
+  height: 40px;
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-
 .noteText {
-    font-size: 12px;
-    text-align: center;
+  font-size: 14px;
+  text-align: center;
 }
 
 #beatIndicator {
-    margin-left: auto;
-    margin-right: auto;
-    width: 50px;
-    height: 50px;
-    border-radius: 50;
-    border: 3px solid black;
+  margin: 10px auto;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid black;
+}
+
+/* Tablet and up */
+@media (min-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  .noteText {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .adjustmentButtons {
+    gap: 10px;
+  }
+
+  #tapButton {
+    width: 90px;
+    height: 90px;
+  }
+
+  #startButton,
+  #stopButton {
+    width: 60px;
+    height: 60px;
+  }
+
+  .noteText {
+    font-size: 18px;
+  }
 }

@@ -1,0 +1,16 @@
+/* === footer.css === */
+footer {
+  background-color: #D3B9D9;
+  color: #04192A;
+  font-family: Dosis, system-ui, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 2px solid #04192A;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 0;
+  font-style: italic;
+}
